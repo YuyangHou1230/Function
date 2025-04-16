@@ -1,3 +1,0 @@
-D:/CPP-PRO/MyFunction/build/CMakeFiles/MyFunction.dir
-D:/CPP-PRO/MyFunction/build/CMakeFiles/edit_cache.dir
-D:/CPP-PRO/MyFunction/build/CMakeFiles/rebuild_cache.dir
