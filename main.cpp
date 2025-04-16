@@ -160,7 +160,7 @@ public:
     }
 
     template <typename R, typename... Args>
-    R invoke(int id, Args &&...args)
+    R invoke(int id, Args...args)
     {
         // auto type = types.at(id);
         // if (types[id] != std::type_index(typeid(R)))
@@ -185,6 +185,13 @@ int add2(int a, int b, int c)
     return a + b + c;
 }
 
+
+struct Param
+{
+    int a;
+    int b;
+    int c;
+};
 class Foo
 {
 public:
@@ -206,6 +213,11 @@ public:
     {
         return a + " world";
     }
+
+    int add5(Param p)
+    {
+        return p.a * p.b * p.c;
+    }
 };
 
 int main()
@@ -221,6 +233,7 @@ int main()
     registry.registerFunction(3, &foo, &Foo::add2);
     registry.registerFunction(4, &foo, &Foo::add3);
     registry.registerFunction(5, &foo, &Foo::add4);
+    registry.registerFunction(6, &foo, &Foo::add5);
 
     int result1 = registry.invoke<int>(1, 3, 8, 6);
     std::cout << "Result1: " << result1 << std::endl;
@@ -236,6 +249,10 @@ int main()
 
     std::string result5 = registry.invoke<std::string>(5, std::string("hello"));
     std::cout << "Result5:" << result5 << std::endl;
+
+    Param p{2, 3, 4};   
+    int result6 = registry.invoke<int>(6, p);
+    std::cout << "Result6:" << result6 << std::endl;
 
     return 0;
 }
