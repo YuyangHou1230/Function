@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/CPP-PRO/MyFunction/build",
+  "command": "C:\\Strawberry\\c\\bin\\c++.exe   -g -std=c++14 -o CMakeFiles\\MyFunction.dir\\main.cpp.obj -c D:\\CPP-PRO\\MyFunction\\main.cpp",
+  "file": "D:/CPP-PRO/MyFunction/main.cpp",
+  "output": "CMakeFiles/MyFunction.dir/main.cpp.obj"
+}
+]
